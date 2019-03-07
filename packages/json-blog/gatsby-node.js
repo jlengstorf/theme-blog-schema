@@ -12,16 +12,19 @@ exports.sourceNodes = ({
       date: new Date(Date.parse(post.date)).toUTCString()
     };
 
-    createNode({
-      ...postData,
-      id: createNodeId(`json-blog-${post.title}`),
-      parent: null,
-      children: [],
-      internal: {
-        type: 'Blog',
-        content: JSON.stringify(postData),
-        contentDigest: createContentDigest(postData)
-      }
-    });
+    createNode(
+      {
+        ...postData,
+        id: createNodeId(`json-blog-${post.title}`),
+        parent: null,
+        children: [],
+        internal: {
+          type: 'Blog',
+          content: JSON.stringify(postData),
+          contentDigest: createContentDigest(postData)
+        }
+      },
+      { name: 'blog-adapter' }
+    );
   });
 };

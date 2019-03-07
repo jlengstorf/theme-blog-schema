@@ -1,3 +1,3 @@
 module.exports = {
-  __experimentalThemes: ["json-blog", "md-blog"],
+  __experimentalThemes: ["md-blog", "json-blog"],
 }

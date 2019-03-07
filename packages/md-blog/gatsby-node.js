@@ -16,18 +16,21 @@ exports.onCreateNode = ({
   const postData = {
     title: node.frontmatter.title,
     date: node.frontmatter.date,
-    content: md.processSync(node.rawMarkdownBody)
+    content: md.processSync(node.rawMarkdownBody).contents
   };
 
-  createNode({
-    ...postData,
-    id: createNodeId(`md-blog-${postData.title}`),
-    parent: null,
-    children: [],
-    internal: {
-      type: 'Blog',
-      content: JSON.stringify(postData),
-      contentDigest: createContentDigest(postData)
-    }
-  });
+  createNode(
+    {
+      ...postData,
+      id: createNodeId(`md-blog-${postData.title}`),
+      parent: null,
+      children: [],
+      internal: {
+        type: 'Blog',
+        content: JSON.stringify(postData),
+        contentDigest: createContentDigest(postData)
+      }
+    },
+    { name: 'blog-adapter' }
+  );
 };
