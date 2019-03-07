@@ -1,5 +1,6 @@
 const remark = require('remark');
 const html = require('remark-html');
+const { createBlogNode } = require('adapter');
 
 const md = remark().use(html);
 
@@ -19,18 +20,5 @@ exports.onCreateNode = ({
     content: md.processSync(node.rawMarkdownBody).contents
   };
 
-  createNode(
-    {
-      ...postData,
-      id: createNodeId(`md-blog-${postData.title}`),
-      parent: null,
-      children: [],
-      internal: {
-        type: 'Blog',
-        content: JSON.stringify(postData),
-        contentDigest: createContentDigest(postData)
-      }
-    },
-    { name: 'blog-adapter' }
-  );
+  createBlogNode(postData, { createContentDigest, createNodeId, createNode });
 };

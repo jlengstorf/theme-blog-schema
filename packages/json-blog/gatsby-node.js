@@ -1,3 +1,5 @@
+const { createBlogNode } = require('adapter');
+
 exports.sourceNodes = ({
   actions: { createNode },
   createNodeId,
@@ -9,22 +11,9 @@ exports.sourceNodes = ({
     const postData = {
       title: post.title,
       content: post.body,
-      date: new Date(Date.parse(post.date)).toUTCString()
+      date: post.date
     };
 
-    createNode(
-      {
-        ...postData,
-        id: createNodeId(`json-blog-${post.title}`),
-        parent: null,
-        children: [],
-        internal: {
-          type: 'Blog',
-          content: JSON.stringify(postData),
-          contentDigest: createContentDigest(postData)
-        }
-      },
-      { name: 'blog-adapter' }
-    );
+    createBlogNode(postData, { createContentDigest, createNodeId, createNode });
   });
 };
