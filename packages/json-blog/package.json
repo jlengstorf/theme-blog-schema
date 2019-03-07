@@ -1,0 +1,22 @@
+{
+  "name": "json-blog",
+  "version": "0.0.1",
+  "scripts": {
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop"
+  },
+  "dependencies": {
+    "adapter": "*"
+  },
+  "devDependencies": {
+    "gatsby": "^2.2.0-alpha.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.2.0-alpha.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "md-blog",
+  "version": "0.0.1",
+  "scripts": {
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop"
+  },
+  "dependencies": {
+    "adapter": "*",
+    "gatsby-source-filesystem": "^2.0.23",
+    "gatsby-transformer-remark": "^2.3.1",
+    "remark": "^10.0.1",
+    "remark-html": "^9.0.0"
+  },
+  "devDependencies": {
+    "gatsby": "^2.2.0-alpha.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.2.0-alpha.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}

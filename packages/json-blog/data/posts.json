@@ -1,0 +1,12 @@
+[
+  {
+    "title": "This is a JSON-powered post",
+    "body": "<p>Neat!</p>",
+    "date": "March 1, 2019"
+  },
+  {
+    "title": "Also from JSON",
+    "body": "<p>Super neat!</p>",
+    "date": "March 3, 2019"
+  }
+]
